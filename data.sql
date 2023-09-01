@@ -113,7 +113,7 @@ VALUES (
 INSERT INTO specializations (vet_id, species_id)
 VALUES (
   (SELECT id FROM vets WHERE name = 'Jack Harkness'),
-  (SELECT id FROM species WHERE name = 'Pokemon')
+  (SELECT id FROM species WHERE name = 'Digimon')
 );
 
 INSERT INTO visits (animal_id, vet_id, visit_date)
@@ -198,6 +198,13 @@ VALUES (
   (SELECT id FROM animals WHERE name = 'Squirtle'),
   (SELECT id FROM vets WHERE name = 'Stephanie Mendez'),
   '2019-09-29'
+);
+
+INSERT INTO visits (animal_id, vet_id, visit_date)
+VALUES (
+  (SELECT id FROM animals WHERE name = 'Angemon'),
+  (SELECT id FROM vets WHERE name = 'Jack Harkness'),
+  '2020-10-03'
 );
 
 INSERT INTO visits (animal_id, vet_id, visit_date)
