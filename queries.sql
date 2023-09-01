@@ -60,3 +60,42 @@ WHERE weight_kg < 0;
 SELECT * FROM animals;
 
 
+SELECT name
+FROM animals 
+JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Melody Pond';
+
+SELECT animals.name
+FROM animals 
+JOIN species ON animals.species_id = species.id
+WHERE species.name = 'Pokemon';
+
+SELECT o.full_name, a.name
+FROM owners AS o
+LEFT JOIN animals AS a ON o.id = a.owner_id
+ORDER BY o.full_name, a.name;
+
+SELECT animals.species_id, COUNT(*) as animal_count
+FROM animals
+GROUP BY species_id;
+
+SELECT a.name
+FROM animals AS a
+JOIN owners AS o ON a.owner_id = o.id
+JOIN species AS s ON a.species_id = s.id
+WHERE o.full_name = 'Jennifer Orwell'
+AND s.name = 'Digimon';
+
+SELECT a.name
+FROM animals AS a
+JOIN owners AS o ON a.owner_id = o.id
+WHERE o.full_name = 'Dean Winchester'
+AND a.escape_attempts < 10;
+
+SELECT o.full_name, COUNT(*) AS animal_count
+FROM owners AS o
+JOIN animals AS a ON o.id = a.owner_id
+GROUP BY o.full_name
+ORDER BY animal_count DESC
+LIMIT 1;
+
