@@ -164,3 +164,5 @@ LIMIT 1;
 
 
 SELECT vet_id FROM visits where vet_id = 4 LIMIT 10000;
+
+CREATE INDEX animal_index ON visits(animal_id);
