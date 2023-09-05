@@ -160,3 +160,7 @@ WHERE vet.name = 'Maisy Smith'
 GROUP BY s.name
 ORDER BY animal_count DESC
 LIMIT 1;
+
+
+
+SELECT vet_id FROM visits where vet_id = 4 LIMIT 10000;
